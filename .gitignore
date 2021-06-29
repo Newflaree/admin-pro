@@ -9,6 +9,7 @@
 
 # dependencies
 /node_modules
+.vim/
 
 # profiling files
 chrome-profiler-events*.json
