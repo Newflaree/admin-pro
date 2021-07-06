@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'
+import { RouterModule } from '@angular/router'
 
 // Modules
-import { AppRoutingModule } from '../app-routing.module';
+import { ComponentsModule } from '../components/components.module';
 import { SharedModule } from '../shared/shared.module';
 
 // Pages
@@ -20,9 +22,11 @@ import { ProgressComponent } from './progress/progress.component';
     ProgressComponent
   ],
   imports: [
-    AppRoutingModule,
     CommonModule,
-    SharedModule
+    ComponentsModule,
+    FormsModule,
+    RouterModule,
+    SharedModule,
   ],
   exports: [
     DashboardComponent,
