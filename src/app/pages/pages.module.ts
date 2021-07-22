@@ -6,8 +6,9 @@ import { RouterModule } from '@angular/router'
 // Modules
 import { ComponentsModule } from '../components/components.module';
 import { SharedModule } from '../shared/shared.module';
-
+ 
 // Pages
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Graphic1Component } from './graphic1/graphic1.component';
 import { PagesComponent } from './pages.component';
@@ -16,10 +17,11 @@ import { ProgressComponent } from './progress/progress.component';
 
 @NgModule({
   declarations: [
+    AccountSettingsComponent,
     DashboardComponent,
     Graphic1Component,
     PagesComponent,
-    ProgressComponent
+    ProgressComponent,
   ],
   imports: [
     CommonModule,
@@ -29,10 +31,11 @@ import { ProgressComponent } from './progress/progress.component';
     SharedModule,
   ],
   exports: [
+    AccountSettingsComponent,
     DashboardComponent,
     Graphic1Component,
     PagesComponent,
-    ProgressComponent
+    ProgressComponent,
   ]
 })
 export class PagesModule { }

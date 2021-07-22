@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+// Services
+import { SettigsService } from '../services/settigs.service';
+
+// Global functions
+declare function customInitFunctions(): any;
+
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
@@ -7,10 +13,11 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class PagesComponent implements OnInit {
-
-  constructor() { }
+  constructor(
+    private settingsService: SettigsService
+  ) { }
 
   ngOnInit(): void {
+    customInitFunctions();
   }
-
 }

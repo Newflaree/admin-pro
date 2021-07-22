@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-increasing',
@@ -6,12 +6,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styles: [
   ]
 })
-export class IncreasingComponent {
+export class IncreasingComponent implements OnInit {
   //@Input( 'value' ) progress: number = 40;  
   @Input( 'value' ) progress: number = 40;  
-  @Input() btnClass: string = 'btn btn-primary'
+  @Input() btnClass: string = 'btn-primary'
 
   @Output( 'value' ) outputValue: EventEmitter<number> = new EventEmitter();
+
+  ngOnInit() {
+    this.btnClass = `btn ${ this.btnClass }`
+  }
   
   changeValue( value: number ) {
     if ( this.progress >= 100 && value >= 0 ) {
@@ -26,5 +30,17 @@ export class IncreasingComponent {
 
     this.progress = this.progress + value;
     return this.outputValue.emit( this.progress );
+  }
+
+  onChange( newValue: number ) {
+    if ( newValue >= 100 ) {
+      this.progress = 100;
+    } else if ( newValue <= 0 ) {
+      this.progress = 0;
+    } else {
+      this.progress = newValue;
+    }
+
+    this.outputValue.emit( this.progress );
   }
 }
