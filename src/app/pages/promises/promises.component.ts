@@ -11,18 +11,16 @@ export class PromisesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const promise = new Promise( ( reject, resolve ) => {
-      if ( true ) {
-        resolve( 'Hello World' );
-      } else {
-        reject( 'Something went wrong' );
-      }
+    this.getUsers().then( users => {
+      console.log( users );
     });
+  }
 
-    promise.then( ( msg ) => {
-      console.log( msg );
-    }).catch( err => console.log( 'Promise failed', err ) );
-
-    console.log( 'End of init' );
+  getUsers() {
+    return new Promise( resolve => {
+      fetch( 'https://reqres.in/api/users' )
+        .then( resp => resp.json() )
+        .then( body => resolve( body.data ) );
+    });
   }
 }
