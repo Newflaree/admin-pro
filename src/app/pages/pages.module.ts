@@ -14,6 +14,7 @@ import { Graphic1Component } from './graphic1/graphic1.component';
 import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
 import { PromisesComponent } from './promises/promises.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { PromisesComponent } from './promises/promises.component';
     PagesComponent,
     ProgressComponent,
     PromisesComponent,
+    RxjsComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +41,7 @@ import { PromisesComponent } from './promises/promises.component';
     PagesComponent,
     ProgressComponent,
     PromisesComponent,
+    RxjsComponent,
   ]
 })
 export class PagesModule { }
